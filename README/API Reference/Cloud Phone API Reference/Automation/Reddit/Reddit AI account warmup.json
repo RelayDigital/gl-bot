@@ -1,0 +1,1161 @@
+{
+  "startParamMap": [
+    {
+      "isNotRequired": true,
+      "key": "Search keyword",
+      "type": "textarea",
+      "value": ""
+    }
+  ],
+  "contents": [
+    {
+      "position": {
+        "x": 779,
+        "y": 353
+      },
+      "config": {
+        "packgename": "com.reddit.frontpage"
+      },
+      "name": "打开应用",
+      "type": "openApp"
+    },
+    {
+      "position": {
+        "x": 1179,
+        "y": 353
+      },
+      "config": {
+        "timeout": 3000,
+        "timeoutType": "fixedValue"
+      },
+      "name": "等待时间",
+      "type": "waitTime"
+    },
+    {
+      "position": {
+        "x": 1579,
+        "y": 353
+      },
+      "config": {
+        "filterType": "equal",
+        "filters": [
+          {
+            "content": "Dismiss update dialog",
+            "type": "desc"
+          }
+        ],
+        "hiddenChildren": false,
+        "randomDistance": 0,
+        "searchTime": 3000,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "useOffset": false
+      },
+      "enabled": true,
+      "name": "点击元素",
+      "type": "click"
+    },
+    {
+      "position": {
+        "x": 1979,
+        "y": 353
+      },
+      "config": {
+        "timeout": 3000,
+        "timeoutMax": 17000,
+        "timeoutMin": 12000,
+        "timeoutType": "randomInterval"
+      },
+      "enabled": true,
+      "name": "等待时间",
+      "type": "waitTime"
+    },
+    {
+      "position": {
+        "x": 2379,
+        "y": 353
+      },
+      "config": {
+        "filterType": "equal",
+        "filters": [
+          {
+            "content": "ALLOW",
+            "type": "text"
+          }
+        ],
+        "hiddenChildren": true,
+        "randomDistance": 0,
+        "searchTime": 1000,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "useOffset": false
+      },
+      "enabled": true,
+      "name": "点击元素",
+      "type": "click"
+    },
+    {
+      "position": {
+        "x": 2779,
+        "y": 353
+      },
+      "config": {
+        "filterType": "equal",
+        "filters": [
+          {
+            "content": "ALLOW",
+            "type": "text"
+          }
+        ],
+        "hiddenChildren": true,
+        "randomDistance": 0,
+        "searchTime": 1000,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "useOffset": false
+      },
+      "enabled": true,
+      "name": "点击元素",
+      "type": "click"
+    },
+    {
+      "position": {
+        "x": 3179,
+        "y": 353
+      },
+      "config": {
+        "filterType": "equal",
+        "filters": [
+          {
+            "content": "Home feed",
+            "type": "desc"
+          }
+        ],
+        "hiddenChildren": true,
+        "randomDistance": 0,
+        "searchTime": 3000,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "useOffset": false
+      },
+      "enabled": true,
+      "name": "点击元素",
+      "type": "click"
+    },
+    {
+      "position": {
+        "x": 3579,
+        "y": 353
+      },
+      "config": {
+        "timeout": 1000,
+        "timeoutMax": 30000,
+        "timeoutMin": 1000,
+        "timeoutType": "fixedValue"
+      },
+      "enabled": true,
+      "name": "等待时间",
+      "type": "waitTime"
+    },
+    {
+      "position": {
+        "x": 3979,
+        "y": 353
+      },
+      "config": {
+        "filterType": "equal",
+        "filters": [
+          {
+            "content": "Watch feed",
+            "type": "desc"
+          }
+        ],
+        "hiddenChildren": false,
+        "randomDistance": 0,
+        "searchTime": 3000,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "useOffset": false
+      },
+      "enabled": true,
+      "name": "点击元素",
+      "type": "click"
+    },
+    {
+      "position": {
+        "x": 4379,
+        "y": 353
+      },
+      "config": {
+        "apposition": "and",
+        "children": [
+          {
+            "position": {
+              "x": 4379,
+              "y": 983
+            },
+            "config": {
+              "children": [
+                {
+                  "position": {
+                    "x": 4379,
+                    "y": 1613
+                  },
+                  "config": {
+                    "filterType": "equal",
+                    "filters": [
+                      {
+                        "content": "Search",
+                        "type": "desc"
+                      }
+                    ],
+                    "hiddenChildren": true,
+                    "randomDistance": 0,
+                    "searchTime": 3000,
+                    "serial": 1,
+                    "serialType": "fixedValue",
+                    "useOffset": false
+                  },
+                  "name": "点击元素",
+                  "type": "click"
+                },
+                {
+                  "position": {
+                    "x": 4779,
+                    "y": 1613
+                  },
+                  "config": {
+                    "timeoutMax": 2000,
+                    "timeoutMin": 1000,
+                    "timeoutType": "randomInterval"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 5179,
+                    "y": 1613
+                  },
+                  "config": {
+                    "content": [
+                      "${keyword}"
+                    ],
+                    "filterType": "equal",
+                    "filters": [
+                      {
+                        "content": "com.reddit.frontpage:id/search",
+                        "type": "id"
+                      }
+                    ],
+                    "hiddenChildren": true,
+                    "inputType": "taskOrder",
+                    "searchTime": 3000,
+                    "serial": 1,
+                    "serialType": "fixedValue"
+                  },
+                  "name": "输入内容",
+                  "type": "inputContent"
+                },
+                {
+                  "position": {
+                    "x": 5579,
+                    "y": 1613
+                  },
+                  "config": {
+                    "timeoutMax": 2000,
+                    "timeoutMin": 1000,
+                    "timeoutType": "randomInterval"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 5979,
+                    "y": 1613
+                  },
+                  "config": {
+                    "filterType": "contain",
+                    "filters": [
+                      {
+                        "content": "${keyword}",
+                        "type": "text"
+                      }
+                    ],
+                    "hiddenChildren": true,
+                    "randomDistance": 0,
+                    "searchTime": 3000,
+                    "serial": "2",
+                    "serialType": "fixedValue",
+                    "useOffset": false
+                  },
+                  "name": "点击元素",
+                  "type": "click"
+                },
+                {
+                  "position": {
+                    "x": 6379,
+                    "y": 1613
+                  },
+                  "config": {
+                    "timeout": 3000,
+                    "timeoutType": "fixedValue"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 6779,
+                    "y": 1613
+                  },
+                  "config": {
+                    "filterType": "equal",
+                    "filters": [
+                      {
+                        "content": "Posts",
+                        "type": "text"
+                      }
+                    ],
+                    "hiddenChildren": true,
+                    "randomDistance": 0,
+                    "searchTime": 3000,
+                    "serial": 1,
+                    "serialType": "fixedValue",
+                    "useOffset": false
+                  },
+                  "name": "点击元素",
+                  "type": "click"
+                },
+                {
+                  "position": {
+                    "x": 7179,
+                    "y": 1613
+                  },
+                  "config": {
+                    "timeout": 3000,
+                    "timeoutType": "fixedValue"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 7579,
+                    "y": 1613
+                  },
+                  "config": {
+                    "children": [
+                      {
+                        "position": {
+                          "x": 7579,
+                          "y": 1823
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "search_post_section",
+                              "type": "id"
+                            }
+                          ],
+                          "hiddenChildren": true,
+                          "operator": "1",
+                          "operatorNum": 1,
+                          "randomDistance": 0,
+                          "searchTime": 3000,
+                          "serial": "${index}",
+                          "serialType": "fixedValue",
+                          "useOffset": false,
+                          "variable": "hasVideo"
+                        },
+                        "name": "点击元素",
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 7979,
+                          "y": 1823
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 7979,
+                                "y": 2033
+                              },
+                              "config": {
+                                "isBase64": false,
+                                "isScope": false
+                              },
+                              "name": "页面截图",
+                              "type": "screenshotPage"
+                            },
+                            {
+                              "position": {
+                                "x": 8379,
+                                "y": 2033
+                              },
+                              "config": {},
+                              "name": "退出循环",
+                              "type": "breakLoop"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 50,
+                              "relation": "notExist",
+                              "useVariable": "hasVideo"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 8379,
+                          "y": 1823
+                        },
+                        "config": {
+                          "timeout": 3000,
+                          "timeoutType": "fixedValue"
+                        },
+                        "name": "等待时间",
+                        "type": "waitTime"
+                      },
+                      {
+                        "position": {
+                          "x": 8779,
+                          "y": 1823
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "Next",
+                              "type": "text"
+                            }
+                          ],
+                          "hiddenChildren": true,
+                          "randomDistance": 0,
+                          "searchTime": 500,
+                          "serial": 1,
+                          "serialType": "fixedValue",
+                          "useOffset": false
+                        },
+                        "name": "点击元素",
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 9179,
+                          "y": 1823
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "Got it",
+                              "type": "text"
+                            }
+                          ],
+                          "hiddenChildren": true,
+                          "randomDistance": 0,
+                          "searchTime": 500,
+                          "serial": 1,
+                          "serialType": "fixedValue",
+                          "useOffset": false
+                        },
+                        "name": "点击元素",
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 9579,
+                          "y": 1823
+                        },
+                        "config": {
+                          "timeoutMax": 10000,
+                          "timeoutMin": 8000,
+                          "timeoutType": "randomInterval"
+                        },
+                        "enabled": true,
+                        "name": "等待时间",
+                        "type": "waitTime"
+                      },
+                      {
+                        "position": {
+                          "x": 9979,
+                          "y": 1823
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 9979,
+                                "y": 2033
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "voteButtonGroup_upvote",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": true,
+                                "randomDistance": 0,
+                                "searchTime": 3000,
+                                "serial": 1,
+                                "serialType": "fixedValue",
+                                "useOffset": false
+                              },
+                              "name": "点击元素",
+                              "type": "click"
+                            },
+                            {
+                              "position": {
+                                "x": 10379,
+                                "y": 2033
+                              },
+                              "config": {
+                                "timeoutMax": 2000,
+                                "timeoutMin": 1000,
+                                "timeoutType": "randomInterval"
+                              },
+                              "name": "等待时间",
+                              "type": "waitTime"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 30,
+                              "relation": "random"
+                            }
+                          ]
+                        },
+                        "enabled": true,
+                        "name": "IF条件",
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 10379,
+                          "y": 1823
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 10379,
+                                "y": 2243
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "comment_button",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": true,
+                                "randomDistance": 0,
+                                "searchTime": 3000,
+                                "serial": 1,
+                                "serialType": "fixedValue",
+                                "useOffset": false
+                              },
+                              "name": "点击元素",
+                              "type": "click"
+                            },
+                            {
+                              "position": {
+                                "x": 10779,
+                                "y": 2243
+                              },
+                              "config": {
+                                "timeoutMax": 2000,
+                                "timeoutMin": 1000,
+                                "timeoutType": "randomInterval"
+                              },
+                              "name": "等待时间",
+                              "type": "waitTime"
+                            },
+                            {
+                              "position": {
+                                "x": 11179,
+                                "y": 2243
+                              },
+                              "config": {
+                                "children": [
+                                  {
+                                    "position": {
+                                      "x": 11179,
+                                      "y": 2453
+                                    },
+                                    "config": {
+                                      "_a": 200,
+                                      "_b": 300,
+                                      "direction": "top",
+                                      "distanceMax": "400",
+                                      "distanceMin": "300",
+                                      "position": [
+                                        260,
+                                        "800"
+                                      ],
+                                      "randomDistance": 0,
+                                      "randomWheelSleepTime": [
+                                        200,
+                                        300
+                                      ]
+                                    },
+                                    "name": "滑动页面",
+                                    "type": "scrollPage"
+                                  },
+                                  {
+                                    "position": {
+                                      "x": 11579,
+                                      "y": 2453
+                                    },
+                                    "config": {
+                                      "timeoutMax": 3000,
+                                      "timeoutMin": 2000,
+                                      "timeoutType": "randomInterval"
+                                    },
+                                    "name": "等待时间",
+                                    "type": "waitTime"
+                                  }
+                                ],
+                                "maxTimes": 3,
+                                "minTimes": 2,
+                                "serialType": "randomInterval"
+                              },
+                              "enabled": true,
+                              "name": "For循环次数",
+                              "type": "forTimes"
+                            },
+                            {
+                              "position": {
+                                "x": 11579,
+                                "y": 2243
+                              },
+                              "config": {},
+                              "name": "页面后退",
+                              "type": "goBack"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 30,
+                              "relation": "random"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 10779,
+                          "y": 1823
+                        },
+                        "config": {
+                          "isBase64": false,
+                          "isScope": false
+                        },
+                        "name": "页面截图",
+                        "type": "screenshotPage"
+                      },
+                      {
+                        "position": {
+                          "x": 11179,
+                          "y": 1823
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "com.reddit.frontpage:id/search",
+                              "type": "id"
+                            }
+                          ],
+                          "hiddenChildren": true,
+                          "searchTime": 200,
+                          "serial": 1,
+                          "serialType": "fixedValue",
+                          "variable": "hasSearch"
+                        },
+                        "name": "等待元素出现",
+                        "type": "waitEle"
+                      },
+                      {
+                        "position": {
+                          "x": 11579,
+                          "y": 1823
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 11579,
+                                "y": 2033
+                              },
+                              "config": {},
+                              "name": "页面后退",
+                              "type": "goBack"
+                            },
+                            {
+                              "position": {
+                                "x": 11979,
+                                "y": 2033
+                              },
+                              "config": {
+                                "timeoutMax": 2000,
+                                "timeoutMin": 1000,
+                                "timeoutType": "randomInterval"
+                              },
+                              "name": "等待时间",
+                              "type": "waitTime"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 50,
+                              "relation": "notExist",
+                              "useVariable": "hasSearch"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 11979,
+                          "y": 1823
+                        },
+                        "config": {
+                          "_a": 200,
+                          "_b": 300,
+                          "direction": "top",
+                          "distanceMax": 150,
+                          "distanceMin": 100,
+                          "position": [
+                            260,
+                            400
+                          ],
+                          "randomDistance": 0,
+                          "randomWheelSleepTime": [
+                            200,
+                            300
+                          ]
+                        },
+                        "name": "滑动页面",
+                        "type": "scrollPage"
+                      }
+                    ],
+                    "serialType": "fixedValue",
+                    "times": "5",
+                    "variableIndex": "index"
+                  },
+                  "name": "For循环次数",
+                  "type": "forTimes"
+                },
+                {
+                  "position": {
+                    "x": 7979,
+                    "y": 1613
+                  },
+                  "config": {},
+                  "name": "页面后退",
+                  "type": "goBack"
+                }
+              ],
+              "content": [
+                "${Search keyword}"
+              ],
+              "reversal": false,
+              "variable": "keyword"
+            },
+            "name": "For循环数据",
+            "type": "forData"
+          }
+        ],
+        "conditionList": [
+          {
+            "probability": 50,
+            "relation": "exist",
+            "useVariable": "Search keyword"
+          }
+        ],
+        "other": [
+          {
+            "position": {
+              "x": 4379,
+              "y": 563
+            },
+            "config": {
+              "children": [
+                {
+                  "position": {
+                    "x": 4379,
+                    "y": 773
+                  },
+                  "config": {
+                    "timeoutMax": 15000,
+                    "timeoutMin": 8000,
+                    "timeoutType": "randomInterval"
+                  },
+                  "enabled": true,
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 4779,
+                    "y": 773
+                  },
+                  "config": {
+                    "apposition": "and",
+                    "children": [
+                      {
+                        "position": {
+                          "x": 4779,
+                          "y": 1193
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "post_comment_button",
+                              "type": "id"
+                            }
+                          ],
+                          "hiddenChildren": true,
+                          "offsetX": -180,
+                          "offsetY": 0,
+                          "randomDistance": 0,
+                          "searchTime": 3000,
+                          "serial": "1",
+                          "serialType": "fixedValue",
+                          "useOffset": true,
+                          "variable": "click1"
+                        },
+                        "name": "点击元素",
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 5179,
+                          "y": 1193
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 5179,
+                                "y": 1403
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "post_comment_button",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": true,
+                                "offsetX": -180,
+                                "offsetY": 0,
+                                "randomDistance": 0,
+                                "searchTime": 3000,
+                                "serial": "2",
+                                "serialType": "fixedValue",
+                                "useOffset": true,
+                                "variable": ""
+                              },
+                              "enabled": true,
+                              "name": "点击元素",
+                              "type": "click"
+                            },
+                            {
+                              "position": {
+                                "x": 5579,
+                                "y": 1403
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "post_comment_button",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": true,
+                                "offsetX": -250,
+                                "offsetY": 0,
+                                "randomDistance": 0,
+                                "searchTime": 3000,
+                                "serial": "2",
+                                "serialType": "fixedValue",
+                                "useOffset": true,
+                                "variable": ""
+                              },
+                              "name": "点击元素",
+                              "type": "click"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 50,
+                              "relation": "notExist",
+                              "useVariable": "click1"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "type": "ifElse"
+                      }
+                    ],
+                    "conditionList": [
+                      {
+                        "probability": 30,
+                        "relation": "random"
+                      }
+                    ]
+                  },
+                  "name": "IF条件",
+                  "type": "ifElse"
+                },
+                {
+                  "position": {
+                    "x": 5179,
+                    "y": 773
+                  },
+                  "config": {
+                    "apposition": "and",
+                    "children": [
+                      {
+                        "position": {
+                          "x": 5179,
+                          "y": 983
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "post_comment_button",
+                              "type": "id"
+                            }
+                          ],
+                          "hiddenChildren": true,
+                          "randomDistance": 0,
+                          "searchTime": 3000,
+                          "serial": 1,
+                          "serialType": "fixedValue",
+                          "useOffset": false,
+                          "variable": "click2"
+                        },
+                        "name": "点击元素",
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 5579,
+                          "y": 983
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 5579,
+                                "y": 1193
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "post_comment_button",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": true,
+                                "randomDistance": 0,
+                                "searchTime": 3000,
+                                "serial": "2",
+                                "serialType": "fixedValue",
+                                "useOffset": false,
+                                "variable": ""
+                              },
+                              "name": "点击元素",
+                              "type": "click"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 50,
+                              "relation": "notExist",
+                              "useVariable": "click2"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 5979,
+                          "y": 983
+                        },
+                        "config": {
+                          "timeoutMax": 2000,
+                          "timeoutMin": 1000,
+                          "timeoutType": "randomInterval"
+                        },
+                        "name": "等待时间",
+                        "type": "waitTime"
+                      },
+                      {
+                        "position": {
+                          "x": 6379,
+                          "y": 983
+                        },
+                        "config": {
+                          "children": [
+                            {
+                              "position": {
+                                "x": 6379,
+                                "y": 1193
+                              },
+                              "config": {
+                                "_a": 200,
+                                "_b": 300,
+                                "direction": "top",
+                                "distanceMax": "400",
+                                "distanceMin": "300",
+                                "position": [
+                                  260,
+                                  "800"
+                                ],
+                                "randomDistance": 0,
+                                "randomWheelSleepTime": [
+                                  200,
+                                  300
+                                ]
+                              },
+                              "name": "滑动页面",
+                              "type": "scrollPage"
+                            },
+                            {
+                              "position": {
+                                "x": 6779,
+                                "y": 1193
+                              },
+                              "config": {
+                                "timeoutMax": 3000,
+                                "timeoutMin": 2000,
+                                "timeoutType": "randomInterval"
+                              },
+                              "name": "等待时间",
+                              "type": "waitTime"
+                            }
+                          ],
+                          "maxTimes": 3,
+                          "minTimes": 2,
+                          "serialType": "randomInterval"
+                        },
+                        "enabled": true,
+                        "name": "For循环次数",
+                        "type": "forTimes"
+                      },
+                      {
+                        "position": {
+                          "x": 6779,
+                          "y": 983
+                        },
+                        "config": {},
+                        "name": "页面后退",
+                        "type": "goBack"
+                      }
+                    ],
+                    "conditionList": [
+                      {
+                        "probability": 30,
+                        "relation": "random"
+                      }
+                    ]
+                  },
+                  "name": "IF条件",
+                  "type": "ifElse"
+                },
+                {
+                  "position": {
+                    "x": 5579,
+                    "y": 773
+                  },
+                  "config": {
+                    "isBase64": false,
+                    "isScope": false
+                  },
+                  "name": "页面截图",
+                  "type": "screenshotPage"
+                },
+                {
+                  "position": {
+                    "x": 5979,
+                    "y": 773
+                  },
+                  "config": {
+                    "_a": 200,
+                    "_b": 300,
+                    "direction": "top",
+                    "distanceMax": "350",
+                    "distanceMin": "300",
+                    "position": [
+                      260,
+                      "800"
+                    ],
+                    "randomDistance": 0,
+                    "randomWheelSleepTime": [
+                      200,
+                      300
+                    ]
+                  },
+                  "name": "滑动页面",
+                  "type": "scrollPage"
+                }
+              ],
+              "serialType": "fixedValue",
+              "times": "15"
+            },
+            "name": "For循环次数",
+            "type": "forTimes"
+          }
+        ]
+      },
+      "name": "IF条件",
+      "type": "ifElse"
+    }
+  ],
+  "otherContents": {
+    "startNode": {
+      "position": {
+        "x": 379,
+        "y": 353
+      },
+      "config": {},
+      "type": "start",
+      "id": "init-node"
+    },
+    "contents": [],
+    "edges": []
+  }
+}

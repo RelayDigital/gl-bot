@@ -1,0 +1,953 @@
+{
+  "startParamMap": [
+    {
+      "isNotRequired": false,
+      "key": "Number of videos viewed",
+      "type": "number",
+      "value": null
+    },
+    {
+      "isNotRequired": true,
+      "key": "Search keyword",
+      "type": "textarea",
+      "value": []
+    }
+  ],
+  "contents": [
+    {
+      "position": {
+        "x": 729,
+        "y": 252
+      },
+      "config": {
+        "packgename": "com.instagram.android"
+      },
+      "name": "打开应用",
+      "type": "openApp"
+    },
+    {
+      "position": {
+        "x": 1129,
+        "y": 252
+      },
+      "config": {
+        "filterType": "equal",
+        "filters": [
+          {
+            "content": "Log in",
+            "type": "desc"
+          }
+        ],
+        "hiddenChildren": false,
+        "searchTime": 10000,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "variable": "isNotLogin"
+      },
+      "name": "等待元素出现",
+      "type": "waitEle"
+    },
+    {
+      "position": {
+        "x": 1529,
+        "y": 252
+      },
+      "config": {
+        "apposition": "and",
+        "children": [
+          {
+            "position": {
+              "x": 1529,
+              "y": 462
+            },
+            "config": {},
+            "name": "结束任务",
+            "type": "endTask"
+          }
+        ],
+        "conditionList": [
+          {
+            "probability": 50,
+            "relation": "exist",
+            "useVariable": "isNotLogin"
+          }
+        ]
+      },
+      "name": "IF条件",
+      "type": "ifElse"
+    },
+    {
+      "position": {
+        "x": 1929,
+        "y": 252
+      },
+      "config": {
+        "filterType": "contain",
+        "filters": [
+          {
+            "content": "ALLOW",
+            "type": "text"
+          }
+        ],
+        "hiddenChildren": false,
+        "randomDistance": 0,
+        "searchTime": 200,
+        "serial": 1,
+        "serialType": "fixedValue",
+        "useOffset": false
+      },
+      "name": "点击元素",
+      "type": "click"
+    },
+    {
+      "position": {
+        "x": 2329,
+        "y": 252
+      },
+      "config": {
+        "timeout": 2000,
+        "timeoutType": "fixedValue"
+      },
+      "enabled": true,
+      "name": "等待时间",
+      "type": "waitTime"
+    },
+    {
+      "position": {
+        "x": 2729,
+        "y": 252
+      },
+      "config": {
+        "apposition": "and",
+        "children": [
+          {
+            "position": {
+              "x": 2729,
+              "y": 672
+            },
+            "config": {
+              "filterType": "equal",
+              "filters": [
+                {
+                  "content": "com.instagram.android:id/search_tab",
+                  "type": "id"
+                },
+                {
+                  "content": "Search and explore",
+                  "type": "desc"
+                }
+              ],
+              "hiddenChildren": false,
+              "randomDistance": 0,
+              "searchTime": 3000,
+              "serial": 1,
+              "serialType": "fixedValue",
+              "useOffset": false
+            },
+            "name": "点击元素",
+            "type": "click"
+          },
+          {
+            "position": {
+              "x": 3129,
+              "y": 672
+            },
+            "config": {
+              "children": [
+                {
+                  "position": {
+                    "x": 3129,
+                    "y": 1302
+                  },
+                  "config": {
+                    "timeout": 2000,
+                    "timeoutType": "fixedValue"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 3529,
+                    "y": 1302
+                  },
+                  "config": {
+                    "content": [
+                      "${keyword}"
+                    ],
+                    "filterType": "equal",
+                    "filters": [
+                      {
+                        "content": "com.instagram.android:id/action_bar_search_edit_text",
+                        "type": "id"
+                      }
+                    ],
+                    "hiddenChildren": false,
+                    "inputType": "taskOrder",
+                    "searchTime": 3000,
+                    "serial": 1,
+                    "serialType": "fixedValue"
+                  },
+                  "name": "输入内容",
+                  "type": "inputContent"
+                },
+                {
+                  "position": {
+                    "x": 3929,
+                    "y": 1302
+                  },
+                  "config": {
+                    "timeout": 2000,
+                    "timeoutType": "fixedValue"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 4329,
+                    "y": 1302
+                  },
+                  "config": {
+                    "keyType": "enter"
+                  },
+                  "name": "键盘操作",
+                  "type": "keyOption"
+                },
+                {
+                  "position": {
+                    "x": 4729,
+                    "y": 1302
+                  },
+                  "config": {
+                    "timeout": 2000,
+                    "timeoutType": "fixedValue"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 5129,
+                    "y": 1302
+                  },
+                  "config": {
+                    "isBase64": false,
+                    "isScope": false
+                  },
+                  "name": "页面截图",
+                  "type": "screenshotPage"
+                },
+                {
+                  "position": {
+                    "x": 5529,
+                    "y": 1302
+                  },
+                  "config": {
+                    "filterType": "equal",
+                    "filters": [
+                      {
+                        "content": "Reels",
+                        "type": "text"
+                      }
+                    ],
+                    "hiddenChildren": false,
+                    "randomDistance": 0,
+                    "searchTime": 3000,
+                    "serial": 1,
+                    "serialType": "fixedValue",
+                    "useOffset": false
+                  },
+                  "name": "点击元素",
+                  "type": "click"
+                },
+                {
+                  "position": {
+                    "x": 5929,
+                    "y": 1302
+                  },
+                  "config": {
+                    "timeout": 2000,
+                    "timeoutType": "fixedValue"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 6329,
+                    "y": 1302
+                  },
+                  "config": {
+                    "_a": 150,
+                    "_b": 200,
+                    "direction": "top",
+                    "distanceMax": "600",
+                    "distanceMin": "400",
+                    "position": [
+                      260,
+                      "800"
+                    ],
+                    "randomDistance": 0,
+                    "randomWheelSleepTime": [
+                      150,
+                      200
+                    ]
+                  },
+                  "name": "Scroll",
+                  "type": "scrollPage"
+                },
+                {
+                  "position": {
+                    "x": 6729,
+                    "y": 1302
+                  },
+                  "config": {
+                    "filterCollection": [
+                      [
+                        {
+                          "content": "com.instagram.android:id/layout_container",
+                          "filterType": "equal",
+                          "type": "id"
+                        }
+                      ]
+                    ],
+                    "hiddenChildren": false,
+                    "randomDistance": 0,
+                    "searchTime": 3000,
+                    "serialMax": 6,
+                    "serialMin": 1,
+                    "serialType": "randomInterval",
+                    "useOffset": false
+                  },
+                  "name": "点击元素",
+                  "type": "click"
+                },
+                {
+                  "position": {
+                    "x": 7129,
+                    "y": 1302
+                  },
+                  "config": {
+                    "children": [
+                      {
+                        "position": {
+                          "x": 7129,
+                          "y": 1512
+                        },
+                        "config": {
+                          "timeoutMax": 10009,
+                          "timeoutMin": 6312,
+                          "timeoutType": "randomInterval"
+                        },
+                        "name": "等待时间",
+                        "type": "waitTime"
+                      },
+                      {
+                        "position": {
+                          "x": 7529,
+                          "y": 1512
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 7529,
+                                "y": 1932
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "com.instagram.android:id/like_button",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": false,
+                                "searchTime": 3000,
+                                "serial": 1,
+                                "serialType": "fixedValue",
+                                "useOffset": false
+                              },
+                              "name": "点击元素",
+                              "parentEnabled": true,
+                              "type": "click"
+                            },
+                            {
+                              "position": {
+                                "x": 7929,
+                                "y": 1932
+                              },
+                              "config": {
+                                "timeout": 2000,
+                                "timeoutType": "fixedValue"
+                              },
+                              "name": "等待时间",
+                              "type": "waitTime"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 30,
+                              "relation": "random"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "parentEnabled": true,
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 7929,
+                          "y": 1512
+                        },
+                        "config": {
+                          "apposition": "and",
+                          "children": [
+                            {
+                              "position": {
+                                "x": 7929,
+                                "y": 1722
+                              },
+                              "config": {
+                                "filterType": "equal",
+                                "filters": [
+                                  {
+                                    "content": "com.instagram.android:id/comment_button",
+                                    "type": "id"
+                                  }
+                                ],
+                                "hiddenChildren": false,
+                                "randomDistance": 0,
+                                "searchTime": 3000,
+                                "serial": 1,
+                                "serialType": "fixedValue",
+                                "useOffset": false
+                              },
+                              "name": "点击元素",
+                              "parentEnabled": true,
+                              "type": "click"
+                            },
+                            {
+                              "position": {
+                                "x": 8329,
+                                "y": 1722
+                              },
+                              "config": {
+                                "timeout": 2000,
+                                "timeoutType": "fixedValue"
+                              },
+                              "name": "等待时间",
+                              "type": "waitTime"
+                            },
+                            {
+                              "position": {
+                                "x": 8729,
+                                "y": 1722
+                              },
+                              "config": {
+                                "children": [
+                                  {
+                                    "position": {
+                                      "x": 8729,
+                                      "y": 1932
+                                    },
+                                    "config": {
+                                      "_a": 200,
+                                      "_b": 300,
+                                      "direction": "top",
+                                      "distanceMax": 150,
+                                      "distanceMin": 100,
+                                      "position": [
+                                        260,
+                                        "800"
+                                      ],
+                                      "randomDistance": 0,
+                                      "randomWheelSleepTime": [
+                                        200,
+                                        300
+                                      ]
+                                    },
+                                    "name": "滑动页面",
+                                    "type": "scrollPage"
+                                  },
+                                  {
+                                    "position": {
+                                      "x": 9129,
+                                      "y": 1932
+                                    },
+                                    "config": {
+                                      "timeoutMax": 3000,
+                                      "timeoutMin": 2000,
+                                      "timeoutType": "randomInterval"
+                                    },
+                                    "name": "等待时间",
+                                    "type": "waitTime"
+                                  }
+                                ],
+                                "maxTimes": 5,
+                                "minTimes": 3,
+                                "serialType": "randomInterval"
+                              },
+                              "name": "For循环次数",
+                              "type": "forTimes"
+                            },
+                            {
+                              "position": {
+                                "x": 9129,
+                                "y": 1722
+                              },
+                              "config": {
+                                "_a": 200,
+                                "_b": 300,
+                                "direction": "top",
+                                "distanceMax": "300",
+                                "distanceMin": "200",
+                                "position": [
+                                  260,
+                                  "600"
+                                ],
+                                "randomDistance": 0,
+                                "randomWheelSleepTime": [
+                                  200,
+                                  300
+                                ]
+                              },
+                              "name": "滑动页面",
+                              "type": "scrollPage"
+                            },
+                            {
+                              "position": {
+                                "x": 9529,
+                                "y": 1722
+                              },
+                              "config": {},
+                              "name": "页面后退",
+                              "type": "goBack"
+                            }
+                          ],
+                          "conditionList": [
+                            {
+                              "probability": 30,
+                              "relation": "random"
+                            }
+                          ]
+                        },
+                        "name": "IF条件",
+                        "parentEnabled": true,
+                        "type": "ifElse"
+                      },
+                      {
+                        "position": {
+                          "x": 8329,
+                          "y": 1512
+                        },
+                        "config": {
+                          "isBase64": false,
+                          "isScope": false
+                        },
+                        "name": "页面截图",
+                        "type": "screenshotPage"
+                      },
+                      {
+                        "position": {
+                          "x": 8729,
+                          "y": 1512
+                        },
+                        "config": {
+                          "_a": 200,
+                          "_b": 300,
+                          "direction": "top",
+                          "distanceMax": 150,
+                          "distanceMin": 100,
+                          "position": [
+                            260,
+                            400
+                          ],
+                          "randomDistance": 0,
+                          "randomWheelSleepTime": [
+                            200,
+                            300
+                          ]
+                        },
+                        "name": "Scroll",
+                        "type": "scrollPage"
+                      }
+                    ],
+                    "serialType": "fixedValue",
+                    "times": "${Number of videos viewed}",
+                    "variableIndex": "index"
+                  },
+                  "name": "For循环次数",
+                  "type": "forTimes"
+                },
+                {
+                  "position": {
+                    "x": 7529,
+                    "y": 1302
+                  },
+                  "config": {},
+                  "name": "页面后退",
+                  "type": "goBack"
+                },
+                {
+                  "position": {
+                    "x": 7929,
+                    "y": 1302
+                  },
+                  "config": {},
+                  "name": "页面后退",
+                  "type": "goBack"
+                }
+              ],
+              "content": [
+                "${Search keyword}"
+              ],
+              "reversal": false,
+              "variable": "keyword"
+            },
+            "name": "For循环数据",
+            "type": "forData"
+          },
+          {
+            "position": {
+              "x": 3529,
+              "y": 672
+            },
+            "config": {},
+            "name": "End task",
+            "type": "endTask"
+          }
+        ],
+        "conditionList": [
+          {
+            "probability": 50,
+            "relation": "exist",
+            "useVariable": "Search keyword"
+          }
+        ],
+        "other": [
+          {
+            "position": {
+              "x": 2729,
+              "y": 462
+            },
+            "config": {
+              "filterType": "equal",
+              "filters": [
+                {
+                  "content": "com.instagram.android:id/clips_tab",
+                  "type": "id"
+                },
+                {
+                  "content": "Reels",
+                  "type": "desc"
+                }
+              ],
+              "hiddenChildren": false,
+              "searchTime": 3000,
+              "serial": 1,
+              "serialType": "fixedValue",
+              "useOffset": false
+            },
+            "name": "点击元素",
+            "type": "click"
+          },
+          {
+            "position": {
+              "x": 3129,
+              "y": 462
+            },
+            "config": {
+              "filterType": "equal",
+              "filters": [
+                {
+                  "content": "Try it",
+                  "type": "desc"
+                }
+              ],
+              "hiddenChildren": false,
+              "searchTime": 10000,
+              "serial": 1,
+              "serialType": "fixedValue",
+              "useOffset": false
+            },
+            "name": "点击元素",
+            "type": "click"
+          },
+          {
+            "position": {
+              "x": 3529,
+              "y": 462
+            },
+            "config": {
+              "timeout": 3000,
+              "timeoutMax": 8000,
+              "timeoutMin": 3000,
+              "timeoutType": "randomInterval"
+            },
+            "name": "等待时间",
+            "type": "waitTime"
+          },
+          {
+            "position": {
+              "x": 3929,
+              "y": 462
+            },
+            "config": {
+              "children": [
+                {
+                  "position": {
+                    "x": 3929,
+                    "y": 672
+                  },
+                  "config": {
+                    "_a": 200,
+                    "_b": 300,
+                    "direction": "top",
+                    "distanceMax": "300",
+                    "distanceMin": 100,
+                    "position": [
+                      260,
+                      400
+                    ],
+                    "randomDistance": 0,
+                    "randomWheelSleepTime": [
+                      200,
+                      300
+                    ]
+                  },
+                  "name": "滑动页面",
+                  "type": "scrollPage"
+                },
+                {
+                  "position": {
+                    "x": 4329,
+                    "y": 672
+                  },
+                  "config": {
+                    "timeout": 3000,
+                    "timeoutMax": 15000,
+                    "timeoutMin": 8000,
+                    "timeoutType": "randomInterval"
+                  },
+                  "name": "等待时间",
+                  "type": "waitTime"
+                },
+                {
+                  "position": {
+                    "x": 4729,
+                    "y": 672
+                  },
+                  "config": {
+                    "apposition": "and",
+                    "children": [
+                      {
+                        "position": {
+                          "x": 4729,
+                          "y": 1092
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "com.instagram.android:id/like_button",
+                              "type": "id"
+                            }
+                          ],
+                          "hiddenChildren": false,
+                          "searchTime": 3000,
+                          "serial": 1,
+                          "serialType": "fixedValue",
+                          "useOffset": false
+                        },
+                        "name": "点击元素",
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 5129,
+                          "y": 1092
+                        },
+                        "config": {
+                          "timeout": 2000,
+                          "timeoutType": "fixedValue"
+                        },
+                        "name": "等待时间",
+                        "type": "waitTime"
+                      }
+                    ],
+                    "conditionList": [
+                      {
+                        "probability": 30,
+                        "relation": "random"
+                      }
+                    ]
+                  },
+                  "name": "IF条件",
+                  "type": "ifElse"
+                },
+                {
+                  "position": {
+                    "x": 5129,
+                    "y": 672
+                  },
+                  "config": {
+                    "apposition": "and",
+                    "children": [
+                      {
+                        "position": {
+                          "x": 5129,
+                          "y": 882
+                        },
+                        "config": {
+                          "filterType": "equal",
+                          "filters": [
+                            {
+                              "content": "com.instagram.android:id/comment_button",
+                              "type": "id"
+                            }
+                          ],
+                          "hiddenChildren": false,
+                          "randomDistance": 0,
+                          "searchTime": 3000,
+                          "serial": 1,
+                          "serialType": "fixedValue",
+                          "useOffset": false
+                        },
+                        "name": "点击元素",
+                        "parentEnabled": true,
+                        "type": "click"
+                      },
+                      {
+                        "position": {
+                          "x": 5529,
+                          "y": 882
+                        },
+                        "config": {
+                          "timeout": 2000,
+                          "timeoutType": "fixedValue"
+                        },
+                        "name": "等待时间",
+                        "parentEnabled": true,
+                        "type": "waitTime"
+                      },
+                      {
+                        "position": {
+                          "x": 5929,
+                          "y": 882
+                        },
+                        "config": {
+                          "children": [
+                            {
+                              "position": {
+                                "x": 5929,
+                                "y": 1092
+                              },
+                              "config": {
+                                "_a": 200,
+                                "_b": 300,
+                                "direction": "top",
+                                "distanceMax": 150,
+                                "distanceMin": 100,
+                                "position": [
+                                  260,
+                                  "800"
+                                ],
+                                "randomDistance": 0,
+                                "randomWheelSleepTime": [
+                                  200,
+                                  300
+                                ]
+                              },
+                              "name": "滑动页面",
+                              "parentEnabled": true,
+                              "type": "scrollPage"
+                            },
+                            {
+                              "position": {
+                                "x": 6329,
+                                "y": 1092
+                              },
+                              "config": {
+                                "timeoutMax": 3000,
+                                "timeoutMin": 2000,
+                                "timeoutType": "randomInterval"
+                              },
+                              "name": "等待时间",
+                              "parentEnabled": true,
+                              "type": "waitTime"
+                            }
+                          ],
+                          "maxTimes": 5,
+                          "minTimes": 3,
+                          "serialType": "randomInterval"
+                        },
+                        "name": "For循环次数",
+                        "parentEnabled": true,
+                        "type": "forTimes"
+                      },
+                      {
+                        "position": {
+                          "x": 6329,
+                          "y": 882
+                        },
+                        "config": {},
+                        "name": "页面后退",
+                        "parentEnabled": true,
+                        "type": "goBack"
+                      }
+                    ],
+                    "conditionList": [
+                      {
+                        "probability": 30,
+                        "relation": "random"
+                      }
+                    ]
+                  },
+                  "name": "IF条件",
+                  "parentEnabled": true,
+                  "type": "ifElse"
+                },
+                {
+                  "position": {
+                    "x": 5529,
+                    "y": 672
+                  },
+                  "config": {
+                    "isBase64": false,
+                    "isScope": false
+                  },
+                  "name": "页面截图",
+                  "parentEnabled": true,
+                  "type": "screenshotPage"
+                }
+              ],
+              "serialType": "fixedValue",
+              "times": "${Number of videos viewed}"
+            },
+            "name": "For循环次数",
+            "type": "forTimes"
+          }
+        ]
+      },
+      "name": "IF条件",
+      "type": "ifElse"
+    }
+  ],
+  "otherContents": {
+    "startNode": {
+      "position": {
+        "x": 329,
+        "y": 252
+      },
+      "config": {},
+      "type": "start",
+      "id": "init-node"
+    },
+    "contents": [],
+    "edges": []
+  }
+}

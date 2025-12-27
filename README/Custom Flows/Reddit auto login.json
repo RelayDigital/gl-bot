@@ -1,0 +1,558 @@
+{
+  "content": {
+    "contents": [
+      {
+        "config": {
+          "packgename": "com.reddit.frontpage"
+        },
+        "isNewAdd": false,
+        "name": "Open Reddit",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "timeoutMax": 8000,
+          "timeoutMin": 5000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait for app load",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Dismiss update dialog",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 2000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Dismiss update dialog",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "ALLOW",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 2000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Allow notifications",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Log In",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 5000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false,
+          "variable": "loginButton"
+        },
+        "isNewAdd": false,
+        "name": "Click Log In button",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 5000,
+          "timeoutMin": 3000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait for login screen",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Continue with email",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false,
+          "variable": "emailOption"
+        },
+        "isNewAdd": false,
+        "name": "Check for email login option",
+        "type": "click"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "timeoutMax": 3000,
+                "timeoutMin": 2000,
+                "timeoutType": "randomInterval"
+              },
+              "isNewAdd": false,
+              "name": "Wait",
+              "type": "waitTime"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "exist",
+              "useVariable": "emailOption"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Wait if email option clicked",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Username",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click username field",
+        "type": "click"
+      },
+      {
+        "config": {
+          "content": [
+            "${username}"
+          ],
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Username",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "inputType": "taskOrder",
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue"
+        },
+        "isNewAdd": false,
+        "name": "Input username",
+        "type": "inputContent"
+      },
+      {
+        "config": {
+          "timeoutMax": 2000,
+          "timeoutMin": 1000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Password",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click password field",
+        "type": "click"
+      },
+      {
+        "config": {
+          "content": [
+            "${password}"
+          ],
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Password",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "inputType": "taskOrder",
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue"
+        },
+        "isNewAdd": false,
+        "name": "Input password",
+        "type": "inputContent"
+      },
+      {
+        "config": {
+          "timeoutMax": 2000,
+          "timeoutMin": 1000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Continue",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click Continue/Login button",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 10000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait for login processing",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "verification",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "variable": "needs2fa"
+        },
+        "isNewAdd": false,
+        "name": "Check for 2FA prompt",
+        "type": "waitEle"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "android.widget.EditText",
+                    "type": "class"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click 2FA input field",
+              "type": "click"
+            },
+            {
+              "config": {
+                "headers": [
+                  {
+                    "name": "X-SECRET",
+                    "value": "${twoFactorSecret}"
+                  }
+                ],
+                "type": "get",
+                "url": "https://function-bun-production-fc4f.up.railway.app/",
+                "variableMap": [
+                  {
+                    "value": "code",
+                    "variable": "totpCode"
+                  }
+                ]
+              },
+              "isNewAdd": false,
+              "name": "Request TOTP code",
+              "type": "getNetworkRequest"
+            },
+            {
+              "config": {
+                "content": [
+                  "${totpCode}"
+                ],
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "android.widget.EditText",
+                    "type": "class"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "Input 2FA code",
+              "type": "inputContent"
+            },
+            {
+              "config": {
+                "timeoutMax": 2000,
+                "timeoutMin": 1000,
+                "timeoutType": "randomInterval"
+              },
+              "isNewAdd": false,
+              "name": "Wait",
+              "type": "waitTime"
+            },
+            {
+              "config": {
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "Verify",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click Verify button",
+              "type": "click"
+            },
+            {
+              "config": {
+                "timeoutMax": 8000,
+                "timeoutMin": 5000,
+                "timeoutType": "randomInterval"
+              },
+              "isNewAdd": false,
+              "name": "Wait for 2FA verification",
+              "type": "waitTime"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "exist",
+              "useVariable": "needs2fa"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Handle 2FA if needed",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "ALLOW",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Allow permissions",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Skip",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Skip onboarding",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Not now",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Dismiss prompts",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Maybe later",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Dismiss prompts 2",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 5000,
+          "timeoutMin": 3000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Home feed",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "searchTime": 5000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "variable": "loginSuccess"
+        },
+        "isNewAdd": false,
+        "name": "Verify login success",
+        "type": "waitEle"
+      },
+      {
+        "config": {
+          "isBase64": false,
+          "isScope": false
+        },
+        "isNewAdd": false,
+        "name": "Screenshot result",
+        "type": "screenshotPage"
+      }
+    ],
+    "errorType": "skip",
+    "isDebug": false,
+    "startParamMap": [
+      {
+        "isNotRequired": false,
+        "key": "username",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "isNotRequired": false,
+        "key": "password",
+        "type": "string",
+        "value": ""
+      },
+      {
+        "isNotRequired": true,
+        "key": "twoFactorSecret",
+        "type": "string",
+        "value": ""
+      }
+    ]
+  },
+  "desc": "Login to Reddit with username/password. Supports optional 2FA via TOTP. May need element ID adjustments based on actual Reddit app version.",
+  "title": "Reddit auto login"
+}

@@ -1,0 +1,332 @@
+{
+  "content": {
+    "contents": [
+      {
+        "config": {
+          "content": "{}",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "text/plain"
+            },
+            {
+              "name": "X-Text",
+              "value": "${name}"
+            }
+          ],
+          "remark": "Request Name",
+          "type": "post",
+          "url": "https://count.up.railway.app/count",
+          "variableMap": [
+            {
+              "value": "data.length",
+              "variable": "lengthName"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Request for network",
+        "type": "getNetworkRequest"
+      },
+      {
+        "config": {
+          "packgename": "com.instagram.android"
+        },
+        "isNewAdd": false,
+        "name": "打开应用",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "等待时间",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "com.instagram.android:id/profile_tab",
+              "type": "id"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Edit profile",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": "1",
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/prism_form_field_container",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 9000,
+                "serial": "1",
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "android.widget.EditText",
+                    "type": "class"
+                  }
+                ],
+                "hiddenChildren": false,
+                "searchTime": 9000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "type": "text",
+                "variable": "currentName"
+              },
+              "isNewAdd": false,
+              "name": "Get element data",
+              "type": "getEle"
+            },
+            {
+              "config": {
+                "content": "{}",
+                "headers": [
+                  {
+                    "name": "Content-Type",
+                    "value": "text/plain"
+                  },
+                  {
+                    "name": "X-Text",
+                    "value": "${currentName}"
+                  }
+                ],
+                "remark": "Request Current Name",
+                "type": "post",
+                "url": "https://count.up.railway.app/count",
+                "variableMap": [
+                  {
+                    "value": "data.length",
+                    "variable": "lengthCurrentName"
+                  }
+                ]
+              },
+              "isNewAdd": false,
+              "name": "Request for network",
+              "type": "getNetworkRequest"
+            },
+            {
+              "config": {
+                "apposition": "and",
+                "children": [
+                  {
+                    "config": {
+                      "randomDistance": 0,
+                      "x": 360,
+                      "y": 240
+                    },
+                    "isNewAdd": false,
+                    "name": "Click coordinate",
+                    "type": "clickXY"
+                  },
+                  {
+                    "config": {
+                      "children": [
+                        {
+                          "config": {
+                            "keyType": "delete"
+                          },
+                          "isNewAdd": false,
+                          "name": "Keyboard operations",
+                          "type": "keyOption"
+                        }
+                      ],
+                      "serialType": "fixedValue",
+                      "times": "30",
+                      "variableIndex": ""
+                    },
+                    "isNewAdd": false,
+                    "name": "For loop times",
+                    "type": "forTimes"
+                  }
+                ],
+                "conditionList": [
+                  {
+                    "probability": 50,
+                    "relation": "moreEqual",
+                    "result": "1",
+                    "useVariable": "lengthCurrentName"
+                  }
+                ],
+                "other": [],
+                "remark": "If name has text"
+              },
+              "isNewAdd": false,
+              "name": "Statement if",
+              "type": "ifElse"
+            },
+            {
+              "config": {
+                "content": [
+                  "${name}"
+                ],
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "android.widget.EditText",
+                    "type": "class"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 9000,
+                "serial": 1,
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "Enter content",
+              "type": "inputContent"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/action_bar_button_action",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 9000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Change name",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 9000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "moreEqual",
+              "result": "1",
+              "useVariable": "lengthName"
+            }
+          ],
+          "other": [
+            {
+              "config": {
+                "content": "No name found, Skiping",
+                "remark": ""
+              },
+              "isNewAdd": false,
+              "name": "Logs",
+              "type": "log"
+            }
+          ],
+          "remark": "CHANGE NAME"
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Statement if",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "timeout": 15000,
+          "timeoutType": "fixedValue"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      }
+    ],
+    "errorType": "skip",
+    "isDebug": false,
+    "startParamMap": [
+      {
+        "isNotRequired": false,
+        "key": "name",
+        "type": "string",
+        "value": "rileyymarra44"
+      }
+    ]
+  },
+  "desc": "Edit single or multiple items in your IG account",
+  "title": "Display Name Edit"
+}

@@ -1,0 +1,435 @@
+{
+  "content": {
+    "contents": [
+      {
+        "config": {
+          "path": "/sdcard/Download",
+          "remark": "Clear Folder"
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Clear the folder",
+        "type": "deleteFolder"
+      },
+      {
+        "config": {
+          "inputType": "envOrder",
+          "isUseVariable": false,
+          "remark": "Upload the story",
+          "useVariable": "file"
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Upload file",
+        "type": "uploadFile"
+      },
+      {
+        "config": {
+          "packgename": "com.instagram.android",
+          "remark": "Open IG"
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Open app",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "com.instagram.android:id/creation_tab",
+              "type": "id"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "remark": "Go to profile tab",
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "com.instagram.android:id/cam_dest_story",
+              "type": "id"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "remark": "Go to profile tab",
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "com.instagram.android:id/dial_ar_effect_picker_left_side_button_container",
+              "type": "id"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "remark": "Go to profile tab",
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "android.view.ViewGroup",
+              "type": "class"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "remark": "Go to profile tab",
+          "searchTime": 3000,
+          "serial": "2",
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 5000,
+          "timeoutMin": 2000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "randomDistance": 10,
+          "remark": "Click the image/video",
+          "x": 360,
+          "y": 560
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Click coordinate",
+        "type": "clickXY"
+      },
+      {
+        "config": {
+          "content": "{}",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "text/plain"
+            },
+            {
+              "name": "X-Text",
+              "value": "${url}"
+            }
+          ],
+          "type": "post",
+          "url": "https://count.up.railway.app/count",
+          "variableMap": [
+            {
+              "value": "data.length",
+              "variable": "urlLength"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Request for network",
+        "type": "getNetworkRequest"
+      },
+      {
+        "config": {
+          "content": "{}",
+          "headers": [
+            {
+              "name": "Content-Type",
+              "value": "text/plain"
+            },
+            {
+              "name": "X-Text",
+              "value": "${urlText}"
+            }
+          ],
+          "type": "post",
+          "url": "https://count.up.railway.app/count",
+          "variableMap": [
+            {
+              "value": "data.length",
+              "variable": "urlTextLength"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Request for network",
+        "type": "getNetworkRequest"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/asset_button_container",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Link Sticker",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "content": [
+                  "${url}"
+                ],
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/link_sticker_list_web_url_edit_text",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "Enter content",
+              "type": "inputContent"
+            },
+            {
+              "config": {
+                "apposition": "and",
+                "children": [
+                  {
+                    "config": {
+                      "filterType": "equal",
+                      "filters": [
+                        {
+                          "content": "Customize sticker text",
+                          "type": "text"
+                        }
+                      ],
+                      "hiddenChildren": false,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": 1,
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "content": [
+                        "${urlText}"
+                      ],
+                      "filterType": "equal",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/link_sticker_custom_cta_edit_text",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": false,
+                      "inputType": "taskOrder",
+                      "searchTime": 3000,
+                      "serial": 1,
+                      "serialType": "fixedValue"
+                    },
+                    "isNewAdd": false,
+                    "name": "Enter content",
+                    "type": "inputContent"
+                  }
+                ],
+                "conditionList": [
+                  {
+                    "probability": 50,
+                    "relation": "moreEqual",
+                    "result": "1",
+                    "useVariable": "urlTextLength"
+                  }
+                ],
+                "other": [
+                  {
+                    "config": {
+                      "content": "Not Custom Link Text Given. Skiping"
+                    },
+                    "isNewAdd": false,
+                    "name": "Logs",
+                    "type": "log"
+                  }
+                ]
+              },
+              "isNewAdd": false,
+              "name": "Statement if",
+              "type": "ifElse"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Done",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "moreEqual",
+              "result": "1",
+              "useVariable": "urlLength"
+            }
+          ],
+          "other": [
+            {
+              "config": {
+                "content": "Not Link Text Given. Skiping"
+              },
+              "isNewAdd": false,
+              "name": "Logs",
+              "type": "log"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Statement if",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "timeout": 3000,
+          "timeoutType": "fixedValue"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Your story",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      }
+    ],
+    "errorType": "skip",
+    "isDebug": false,
+    "startParamMap": [
+      {
+        "isNotRequired": false,
+        "key": "file",
+        "type": "file",
+        "value": [
+          "https://sv-upgrade.geelark.cn/user-upload/568619069079553762/rpaFile/Dy5PlhSarnzlcBFy50Bm.mp4?fileName=ReelAudio-29390__combo11_would_you_ever_let_m.mp4"
+        ]
+      },
+      {
+        "isNotRequired": true,
+        "key": "url",
+        "type": "string",
+        "value": "www.example.com"
+      },
+      {
+        "isNotRequired": true,
+        "key": "urlText",
+        "type": "string",
+        "value": "clickme"
+      }
+    ]
+  },
+  "desc": "Upload a story with option to leave a link ",
+  "title": "Story Poster"
+}

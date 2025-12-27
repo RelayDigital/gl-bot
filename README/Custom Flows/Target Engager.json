@@ -1,0 +1,580 @@
+{
+  "content": {
+    "contents": [
+      {
+        "config": {
+          "packgename": "com.instagram.android"
+        },
+        "isNewAdd": false,
+        "name": "打开应用",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "timeoutMax": 8000,
+          "timeoutMin": 5000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "等待时间",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "contain",
+          "filters": [
+            {
+              "content": "Search and explore",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/action_bar_search_hints_text_layout",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "content": [
+                  "${accountsNumber}"
+                ],
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/action_bar_search_hints_text_layout",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 3000,
+                "serial": "1",
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "输入内容",
+              "type": "inputContent"
+            },
+            {
+              "config": {
+                "keyType": "enter"
+              },
+              "isNewAdd": false,
+              "name": "Keyboard operations",
+              "type": "keyOption"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Accounts",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/row_search_user_container",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "timeoutMax": 3000,
+                "timeoutMin": 1000,
+                "timeoutType": "randomInterval"
+              },
+              "isNewAdd": false,
+              "name": "Wait time",
+              "type": "waitTime"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Follow",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "OK",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/profile_header_full_name_above_vanity",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "type": "text",
+                "variable": "currentProfile"
+              },
+              "isNewAdd": false,
+              "name": "Get element data",
+              "type": "getEle"
+            },
+            {
+              "config": {
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "by ${currentProfile} at row 1",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "variable": "hasPosts"
+              },
+              "isNewAdd": false,
+              "name": "Element appears",
+              "type": "waitEle"
+            },
+            {
+              "config": {
+                "apposition": "and",
+                "children": [
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "by ${currentProfile} at row 1, column 1",
+                          "type": "desc"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "timeoutMax": 2000,
+                      "timeoutMin": 1000,
+                      "timeoutType": "randomInterval"
+                    },
+                    "isNewAdd": false,
+                    "name": "Wait time",
+                    "type": "waitTime"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/row_feed_button_like",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/action_bar_button_back",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "by ${currentProfile} at row 1, column 2",
+                          "type": "desc"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "timeoutMax": 2000,
+                      "timeoutMin": 1000,
+                      "timeoutType": "randomInterval"
+                    },
+                    "isNewAdd": false,
+                    "name": "Wait time",
+                    "type": "waitTime"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/row_feed_button_like",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/action_bar_button_back",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "by ${currentProfile} at row 1, column 3",
+                          "type": "desc"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "timeoutMax": 2000,
+                      "timeoutMin": 1000,
+                      "timeoutType": "randomInterval"
+                    },
+                    "isNewAdd": false,
+                    "name": "Wait time",
+                    "type": "waitTime"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/row_feed_button_like",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  },
+                  {
+                    "config": {
+                      "filterType": "contain",
+                      "filters": [
+                        {
+                          "content": "com.instagram.android:id/action_bar_button_back",
+                          "type": "id"
+                        }
+                      ],
+                      "hiddenChildren": true,
+                      "randomDistance": 0,
+                      "searchTime": 3000,
+                      "serial": "1",
+                      "serialType": "fixedValue",
+                      "useOffset": false
+                    },
+                    "enabled": true,
+                    "isNewAdd": false,
+                    "name": "Click element",
+                    "type": "click"
+                  }
+                ],
+                "conditionList": [
+                  {
+                    "probability": 50,
+                    "relation": "exist",
+                    "useVariable": "hasPosts"
+                  }
+                ],
+                "other": []
+              },
+              "isNewAdd": false,
+              "name": "Statement if",
+              "type": "ifElse"
+            },
+            {
+              "config": {
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/left_action_bar_buttons",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "timeoutMax": 2000,
+                "timeoutMin": 1000,
+                "timeoutType": "randomInterval"
+              },
+              "isNewAdd": false,
+              "name": "Wait time",
+              "type": "waitTime"
+            },
+            {
+              "config": {
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/left_action_bar_buttons",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "com.instagram.android:id/action_bar_search_hints_text_layout",
+                    "type": "id"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Clear text",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            }
+          ],
+          "content": [
+            "${accountsList}"
+          ],
+          "reversal": false,
+          "variable": "accountsNumber"
+        },
+        "isNewAdd": false,
+        "name": "For loop data",
+        "type": "forData"
+      }
+    ],
+    "errorType": "skip",
+    "isDebug": false,
+    "startParamMap": [
+      {
+        "isNotRequired": false,
+        "key": "accountsList",
+        "type": "textarea",
+        "value": [
+          "urbanacreative",
+          "agilidan",
+          "trump"
+        ]
+      }
+    ]
+  },
+  "desc": "Upload list of targets and it will follow and leave 3 likes on their recent posts",
+  "title": "Target Engager"
+}

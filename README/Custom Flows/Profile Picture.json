@@ -1,0 +1,206 @@
+{
+  "content": {
+    "contents": [
+      {
+        "config": {
+          "path": "/sdcard/Download"
+        },
+        "isNewAdd": false,
+        "name": "Clear the folder",
+        "type": "deleteFolder"
+      },
+      {
+        "config": {
+          "inputType": "envOrder",
+          "isUseVariable": false,
+          "useVariable": "image"
+        },
+        "isNewAdd": false,
+        "name": "Upload file",
+        "type": "uploadFile"
+      },
+      {
+        "config": {
+          "packgename": "com.instagram.android"
+        },
+        "isNewAdd": false,
+        "name": "打开应用",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "等待时间",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "com.instagram.android:id/profile_tab",
+              "type": "id"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Edit profile",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": "1",
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Change profile picture",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": "1",
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Choose from library",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": "1",
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Done",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 9000,
+          "serial": "1",
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "Click element",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 12000,
+          "timeoutMin": 8000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      }
+    ],
+    "errorType": "skip",
+    "isDebug": false,
+    "startParamMap": [
+      {
+        "isNotRequired": false,
+        "key": "image",
+        "type": "file",
+        "value": [
+          "https://sv-upgrade.geelark.cn/user-upload/568619069079553762/rpaFile/3x1TLoeqYnpYkY9256lK.jpg?fileName=cat.jpg"
+        ]
+      }
+    ]
+  },
+  "desc": "Add a profile picture on Instagram",
+  "title": "Profile Picture"
+}

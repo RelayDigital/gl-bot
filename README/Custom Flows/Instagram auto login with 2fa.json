@@ -1,0 +1,664 @@
+{
+  "content": {
+    "contents": [
+      {
+        "config": {
+          "packgename": "com.instagram.android"
+        },
+        "isNewAdd": false,
+        "name": "打开应用",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "timeoutMax": 8000,
+          "timeoutMin": 5000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "等待时间",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "I already have an account",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 1000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false,
+          "variable": ""
+        },
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Use another profile",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false,
+          "variable": "isLoginBefore"
+        },
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 8000,
+          "timeoutMin": 5000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "等待时间",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Username, email or mobile number",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Clear Username, email or mobile number text",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "content": [
+                  "${account}"
+                ],
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Username, email or mobile number",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "输入内容",
+              "type": "inputContent"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "exist",
+              "useVariable": "isLoginBefore"
+            }
+          ],
+          "other": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Username, email or mobile number",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Clear Username, email or mobile number text",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "content": [
+                  "${account}"
+                ],
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "Username",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "输入内容",
+              "type": "inputContent"
+            },
+            {
+              "config": {
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "NO",
+                    "type": "text"
+                  }
+                ],
+                "hiddenChildren": false,
+                "randomDistance": 0,
+                "searchTime": 200,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "IF条件",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "content": [
+            "${password}"
+          ],
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Password",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "inputType": "taskOrder",
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue"
+        },
+        "isNewAdd": false,
+        "name": "输入内容",
+        "type": "inputContent"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Log in",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": false,
+          "offsetX": 100,
+          "offsetY": 0,
+          "randomDistance": 0,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": true
+        },
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 8000,
+          "timeoutMin": 5000,
+          "timeoutType": "randomInterval"
+        },
+        "isNewAdd": false,
+        "name": "等待时间",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Check your notifications on another device",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "variable": "anotherDevice"
+        },
+        "isNewAdd": false,
+        "name": "Element appears",
+        "type": "waitEle"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Try another way",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 8000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Authentication app",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 8000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Continue",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 8000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "Click element",
+              "type": "click"
+            },
+            {
+              "config": {
+                "timeoutMax": 7000,
+                "timeoutMin": 5000,
+                "timeoutType": "randomInterval"
+              },
+              "isNewAdd": false,
+              "name": "Wait time",
+              "type": "waitTime"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "exist",
+              "useVariable": "anotherDevice"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "Statement if",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Code",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": false,
+          "searchTime": 3000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "variable": "2fa"
+        },
+        "isNewAdd": false,
+        "name": "Element appears",
+        "type": "waitEle"
+      },
+      {
+        "config": {
+          "apposition": "and",
+          "children": [
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "android.widget.EditText",
+                    "type": "class"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            },
+            {
+              "config": {
+                "headers": [
+                  {
+                    "name": "X-SECRET",
+                    "value": "${auth}"
+                  }
+                ],
+                "type": "get",
+                "url": "https://function-bun-production-fc4f.up.railway.app/",
+                "variableMap": [
+                  {
+                    "value": "code",
+                    "variable": "code"
+                  }
+                ]
+              },
+              "isNewAdd": false,
+              "name": "Request for network",
+              "type": "getNetworkRequest"
+            },
+            {
+              "config": {
+                "content": [
+                  "${code}"
+                ],
+                "filterType": "contain",
+                "filters": [
+                  {
+                    "content": "android.widget.EditText",
+                    "type": "class"
+                  }
+                ],
+                "hiddenChildren": false,
+                "inputType": "taskOrder",
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue"
+              },
+              "isNewAdd": false,
+              "name": "输入内容",
+              "type": "inputContent"
+            },
+            {
+              "config": {
+                "filterType": "equal",
+                "filters": [
+                  {
+                    "content": "Continue",
+                    "type": "desc"
+                  }
+                ],
+                "hiddenChildren": true,
+                "randomDistance": 0,
+                "searchTime": 3000,
+                "serial": 1,
+                "serialType": "fixedValue",
+                "useOffset": false
+              },
+              "isNewAdd": false,
+              "name": "点击元素",
+              "type": "click"
+            }
+          ],
+          "conditionList": [
+            {
+              "probability": 50,
+              "relation": "exist",
+              "useVariable": "2fa"
+            }
+          ]
+        },
+        "isNewAdd": false,
+        "name": "IF条件",
+        "type": "ifElse"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Save",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 8000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "timeoutMax": 5000,
+          "timeoutMin": 3000,
+          "timeoutType": "randomInterval"
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "packgename": "com.instagram.android",
+          "timeout": 30000
+        },
+        "isNewAdd": false,
+        "name": "Close the app",
+        "type": "stopApp"
+      },
+      {
+        "config": {
+          "timeoutMax": 5000,
+          "timeoutMin": 3000,
+          "timeoutType": "randomInterval"
+        },
+        "enabled": true,
+        "isNewAdd": false,
+        "name": "Wait time",
+        "type": "waitTime"
+      },
+      {
+        "config": {
+          "packgename": "com.instagram.android"
+        },
+        "isNewAdd": false,
+        "name": "打开应用",
+        "type": "openApp"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Not now",
+              "type": "text"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 8000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": false,
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Skip",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 8000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": false,
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      },
+      {
+        "config": {
+          "filterType": "equal",
+          "filters": [
+            {
+              "content": "Continue",
+              "type": "desc"
+            }
+          ],
+          "hiddenChildren": true,
+          "randomDistance": 0,
+          "searchTime": 8000,
+          "serial": 1,
+          "serialType": "fixedValue",
+          "useOffset": false
+        },
+        "enabled": false,
+        "isNewAdd": false,
+        "name": "点击元素",
+        "type": "click"
+      }
+    ],
+    "errorType": "skip",
+    "isDebug": false,
+    "startParamMap": [
+      {
+        "isNotRequired": false,
+        "key": "account",
+        "type": "string",
+        "value": "robertscassandra99654"
+      },
+      {
+        "isNotRequired": false,
+        "key": "password",
+        "type": "string",
+        "value": "t0ujqsl0uv"
+      },
+      {
+        "isNotRequired": false,
+        "key": "auth",
+        "type": "string",
+        "value": "P3COXFDHBTBA3QIWIRFW7DK4POZBKNTM"
+      }
+    ]
+  },
+  "desc": "Login to your Instagram account with 2FA, make sure to not include any line breaks at the end and also remove any spaces in between the 2FA code",
+  "title": "Instagram auto login with 2fa"
+}
