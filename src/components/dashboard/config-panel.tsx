@@ -477,7 +477,11 @@ export function ConfigPanel({ onConfigChange, disabled }: ConfigPanelProps) {
 
             {/* Formatted Table View */}
             {!showRawData && (
-              <AccountDataPreview accountData={config.accountData} />
+              <AccountDataPreview
+                accountData={config.accountData}
+                workflowType={config.workflowType}
+                onAccountDataChange={disabled ? undefined : handleAccountDataChange}
+              />
             )}
 
             {/* Raw Textarea View */}
