@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "geelark": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "geelark-cli@1.0.30",
+        "mcp"
+      ]
+    }
+  }
+}
